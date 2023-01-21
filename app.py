@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
         stop_btn.triggered.connect(lambda: self.tabs.currentWidget().stop())
         navtb.addAction(stop_btn)
  
-        self.add_new_tab(QUrl('http://www.google.com'), 'Homepage')
+        self.add_new_tab(QUrl('http://www.searx.work'), 'Homepage')
  
         self.show()
  
@@ -80,7 +80,7 @@ class MainWindow(QMainWindow):
     def add_new_tab(self, qurl = None, label ="Blank"):
     
         if qurl is None:
-            qurl = QUrl('http://www.google.com')
+            qurl = QUrl('http://www.searx.work')
  
         browser = QWebEngineView()
  
@@ -126,7 +126,7 @@ class MainWindow(QMainWindow):
  
     def navigate_home(self):
  
-        self.tabs.currentWidget().setUrl(QUrl("http://www.google.com"))
+        self.tabs.currentWidget().setUrl(QUrl("http://www.searx.work"))
  
     def navigate_to_url(self):
  
