@@ -7,13 +7,13 @@ from PyQt5 import QtWidgets
 import breeze_resources
 import os
 import sys
+import platform 
  
 class MainWindow(QMainWindow):
  
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
  
-        
         self.setWindowIcon(QIcon('ir.png'))
         self.tabs = QTabWidget()
  
@@ -83,6 +83,9 @@ class MainWindow(QMainWindow):
             qurl = QUrl('http://www.searx.work')
  
         browser = QWebEngineView()
+        
+        version = "1.32"
+        browser.page().profile().setHttpUserAgent("Mozilla/5.0 (" + platform.system() + " " + platform.machine() + "; " + platform.version().split('.')[2] + ") CorgiWeb " + version)
  
         browser.setUrl(qurl)
  
@@ -153,7 +156,7 @@ file = QFile(":/dark/stylesheet.qss")
 file.open(QFile.ReadOnly | QFile.Text)
 stream = QTextStream(file)
 app.setStyleSheet(stream.readAll())
- 
+
 app.setApplicationName("CorgiWeb")
  
 window = MainWindow()
