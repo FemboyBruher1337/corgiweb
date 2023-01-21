@@ -14,7 +14,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
  
         
-        
+        self.setWindowIcon(QIcon('ir.png'))
         self.tabs = QTabWidget()
  
         self.tabs.setDocumentMode(True)
