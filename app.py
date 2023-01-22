@@ -8,7 +8,9 @@ import breeze_resources
 import os
 import sys
 import platform 
- 
+
+version = "1.35"
+
 class MainWindow(QMainWindow):
  
     def __init__(self, *args, **kwargs):
@@ -75,7 +77,7 @@ class MainWindow(QMainWindow):
  
         self.show()
  
-        self.setWindowTitle("CorgiWeb")
+        self.setWindowTitle("CorgiWeb " + version)
  
     def add_new_tab(self, qurl = None, label ="Blank"):
     
@@ -84,7 +86,6 @@ class MainWindow(QMainWindow):
  
         browser = QWebEngineView()
         
-        version = "1.34"
         browser.page().profile().setHttpUserAgent("Mozilla/5.0 (" + platform.system() + " " + platform.machine() + "; " + platform.version().split('.')[2] + ") CorgiWeb " + version)
  
         browser.setUrl(qurl)
@@ -157,7 +158,7 @@ file.open(QFile.ReadOnly | QFile.Text)
 stream = QTextStream(file)
 app.setStyleSheet(stream.readAll())
 
-app.setApplicationName("CorgiWeb")
+app.setApplicationName("CorgiWeb " + version)
  
 window = MainWindow()
  
