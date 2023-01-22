@@ -35,7 +35,7 @@ class MainWindow(QMainWindow):
  
         navtb = QToolBar("Navigation")
  
-        self.addToolBar(navtb)
+        self.addToolBar(Qt.BottomToolBarArea, navtb)
  
         back_btn = QAction(QIcon('b.png'), "Back to previous page", self)
  
@@ -84,7 +84,7 @@ class MainWindow(QMainWindow):
  
         browser = QWebEngineView()
         
-        version = "1.32"
+        version = "1.34"
         browser.page().profile().setHttpUserAgent("Mozilla/5.0 (" + platform.system() + " " + platform.machine() + "; " + platform.version().split('.')[2] + ") CorgiWeb " + version)
  
         browser.setUrl(qurl)
