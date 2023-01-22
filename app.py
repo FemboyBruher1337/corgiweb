@@ -9,7 +9,7 @@ import os
 import sys
 import platform 
 
-version = "1.35"
+version = "1.36"
 
 class MainWindow(QMainWindow):
  
@@ -40,6 +40,7 @@ class MainWindow(QMainWindow):
         self.addToolBar(Qt.BottomToolBarArea, navtb)
  
         back_btn = QAction(QIcon('b.png'), "Back to previous page", self)
+        
  
  
  
@@ -73,7 +74,7 @@ class MainWindow(QMainWindow):
         stop_btn.triggered.connect(lambda: self.tabs.currentWidget().stop())
         navtb.addAction(stop_btn)
  
-        self.add_new_tab(QUrl('http://www.searx.work'), 'Homepage')
+        self.add_new_tab(QUrl('http://home.corgiarg.tk'), 'Homepage')
  
         self.show()
  
@@ -82,7 +83,7 @@ class MainWindow(QMainWindow):
     def add_new_tab(self, qurl = None, label ="Blank"):
     
         if qurl is None:
-            qurl = QUrl('http://www.searx.work')
+            qurl = QUrl('http://home.corgiarg.tk')
  
         browser = QWebEngineView()
         
@@ -130,7 +131,7 @@ class MainWindow(QMainWindow):
  
     def navigate_home(self):
  
-        self.tabs.currentWidget().setUrl(QUrl("http://www.searx.work"))
+        self.tabs.currentWidget().setUrl(QUrl("http://home.corgiarg.tk"))
  
     def navigate_to_url(self):
  
