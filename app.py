@@ -9,7 +9,7 @@ import os
 import sys
 import platform 
 
-version = "1.36"
+version = "1.37"
 
 class MainWindow(QMainWindow):
  
@@ -87,7 +87,10 @@ class MainWindow(QMainWindow):
  
         browser = QWebEngineView()
         
-        browser.page().profile().setHttpUserAgent("Mozilla/5.0 (" + platform.system() + " " + platform.machine() + "; " + platform.version().split('.')[2] + ") CorgiWeb " + version)
+        if os.name == "nt":
+            browser.page().profile().setHttpUserAgent("Mozilla/5.0 (" + platform.system() + " " + platform.machine() + "; " + platform.version().split('.')[2] + ") CorgiWeb " + version)
+        else:
+            print("Other system detected, Skipping custom User-Agent")
  
         browser.setUrl(qurl)
  
