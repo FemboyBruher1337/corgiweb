@@ -3,13 +3,26 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import *
+from PyQt5.QtNetwork import QNetworkAccessManager
 from PyQt5 import QtWidgets
+from abpy import Filter
 import breeze_resources
 import os
 import sys
 import platform 
 
-version = "1.37"
+version = "1.38"
+
+class MyNetworkAccessManager(QNetworkAccessManager):
+    def createRequest(self, op, request, device=None):
+        url = request.url().toString()
+        doFilter = adblockFilter.match(url)
+        if doFilter:
+            return QNetworkAccessManager.createRequest(self, self.GetOperation, QNetworkRequest(QUrl()))
+        else:
+            QNetworkAccessManager.createRequest(self, op, request, device)
+            
+            myNetworkAccessManager = MyNetworkAccessManager()
 
 class MainWindow(QMainWindow):
  
@@ -87,6 +100,8 @@ class MainWindow(QMainWindow):
  
         browser = QWebEngineView()
         
+        self.qnam = MyNetworkAccessManager()
+        
         if os.name == "nt":
             browser.page().profile().setHttpUserAgent("Mozilla/5.0 (" + platform.system() + " " + platform.machine() + "; " + platform.version().split('.')[2] + ") CorgiWeb " + version)
         else:
@@ -102,6 +117,7 @@ class MainWindow(QMainWindow):
  
         browser.loadFinished.connect(lambda _, i = i, browser = browser:
                                      self.tabs.setTabText(i, browser.page().title()))
+                                     
  
     def tab_open_doubleclick(self, i):
  
