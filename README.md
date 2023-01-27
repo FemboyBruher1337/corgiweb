@@ -1,7 +1,7 @@
-✨CorgiWeb✨
-==========
+                          ✨CorgiWeb✨
+===================================================================
 
-![](ir.png)
+                          ![](ir.png)
 
 A simple web browser written in python
 
