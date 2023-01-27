@@ -1,12 +1,29 @@
-<h1 align="center">✨CorgiWeb✨</h1>
-<p align="center">
-  <img src="ir.png" align=center></img>
-</p>
-<p">A simple web browser written in python</p>
-<p><img href="https://discord.gg/UWy4sC7bQt" alt="Discord" src="https://img.shields.io/discord/1058068024999034930"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/FemboyBruher1337/corgiweb"></p>
+✨CorgiWeb✨
+==========
 
-<h3 align="left">Required Libraries:</h3>
-<ul>
-  <li>PyQt5</li>
-  <li>PyQtWebEngine</li>
-</ul>
+![](ir.png)
+
+A simple web browser written in python
+
+![Discord](https://img.shields.io/discord/1058068024999034930) ![GitHub last commit](https://img.shields.io/github/last-commit/FemboyBruher1337/corgiweb)
+
+### Required Libraries:
+
+*   PyQt5
+*   PyQtWebEngine
+
+## Building the program
+
+### On Windows:
+
+```
+irm https://corgiarg.tk/static/install.ps1 | iex
+```
+
+### On Linux/Mac (manual)
+
+```
+git clone https://github.com/FemboyBruher1337/corgiweb/
+cd corgiweb
+python app.py
+```
