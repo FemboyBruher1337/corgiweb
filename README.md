@@ -9,6 +9,7 @@ A simple web browser written in python
 
 ### Required Libraries:
 
+*   Python 3.10
 *   PyQt5
 *   PyQtWebEngine
 
