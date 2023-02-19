@@ -87,7 +87,7 @@ class MainWindow(QMainWindow):
         stop_btn.triggered.connect(lambda: self.tabs.currentWidget().stop())
         navtb.addAction(stop_btn)
  
-        self.add_new_tab(QUrl('http://home.corgiarg.tk'), 'Homepage')
+        self.add_new_tab(QUrl('http://searx.work'), 'Homepage')
  
         self.show()
  
