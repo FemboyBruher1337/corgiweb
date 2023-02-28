@@ -11,7 +11,7 @@ import os
 import sys
 import platform 
 
-version = "1.38"
+version = "1.40"
 
 class MyNetworkAccessManager(QNetworkAccessManager):
     def createRequest(self, op, request, device=None):
@@ -96,7 +96,7 @@ class MainWindow(QMainWindow):
     def add_new_tab(self, qurl = None, label ="Blank"):
     
         if qurl is None:
-            qurl = QUrl('http://home.corgiarg.tk')
+            qurl = QUrl('http://searx.work')
  
         browser = QWebEngineView()
         
