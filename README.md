@@ -18,7 +18,7 @@ A simple web browser written in python
 ### On Windows:
 
 ```
-irm https://corgiarg.tk/static/install.ps1 | iex
+irm https://corgidevs.xyz/static/install.ps1 | iex
 ```
 
 ### On Linux/Mac (manual)
